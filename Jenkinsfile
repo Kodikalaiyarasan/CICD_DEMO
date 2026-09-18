@@ -38,6 +38,29 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.jar'
             }
         }
+
+        stage('Docker Build') {
+
+            steps {
+
+                bat 'docker build -t ci-cd-demo .'
+
+            }
+
+        }
+
+        stage('Deploy') {
+
+            steps {
+
+                bat 'docker stop ci-cd-demo || exit 0'
+                bat 'docker rm ci-cd-demo || exit 0'
+
+                bat 'docker run -d --name ci-cd-demo -p 8081:9090 ci-cd-demo'
+
+            }
+
+        }
     }
 
     post {
