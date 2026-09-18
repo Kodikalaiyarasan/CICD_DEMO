@@ -11,7 +11,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Kodikalaiyarasan/CICD_DEMO.git'
+                git branch: 'main', url: 'https://github.com/Kodikalaiyarasan/CICD_DEMO.git'
             }
         }
 
@@ -74,7 +74,8 @@ pipeline {
         }
 
         always {
-            junit 'target/surefire-reports/*.xml'
+           junit testResults: '**/target/surefire-reports/*.xml',
+                 allowEmptyResults: true
         }
     }
 }
