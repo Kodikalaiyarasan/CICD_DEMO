@@ -11,7 +11,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/your/repo.git'
+                git 'https://github.com/Kodikalaiyarasan/CICD_DEMO.git'
             }
         }
 
