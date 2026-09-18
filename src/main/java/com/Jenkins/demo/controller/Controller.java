@@ -13,4 +13,11 @@ public class Controller {
         return "Hi KODI KALAIYARASAN R";
     }
 
+
+    @GetMapping("/HelloSollu")
+    public String Hello()
+    {
+        return "Hello GSOC 2027!!!!!";
+    }
+
 }
