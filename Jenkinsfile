@@ -43,7 +43,7 @@ pipeline {
 
             steps {
 
-                bat 'docker build -t ci-cd-demo .'
+                bat 'docker build -t new-ci-cd-demo .'
 
             }
 
@@ -56,7 +56,7 @@ pipeline {
                 bat 'docker stop ci-cd-demo || exit 0'
                 bat 'docker rm ci-cd-demo || exit 0'
 
-                bat 'docker run -d --name ci-cd-demo -p 8081:9090 ci-cd-demo'
+                bat 'docker run -d --name new-ci-cd-demo -p 8081:9090 new-ci-cd-demo'
 
             }
 
